@@ -1,0 +1,47 @@
+export const IMAGE = {
+    LOGO: require('./Logi.png'),
+    KORZINA: require('./Pocupka.png'),
+    BURGER: require('./Burger.png'),
+    CATEGORIES: require('./Categories.png'),
+    SHAWA: require('./Shawa.png'),
+    KOLA: require('./Kola.png'),
+    CONTACT: require('./Contact.png'),
+    ACTION: require('./Action.png'),
+    MENU: require('./Menu.png'),
+    CLOSEMENU: require('./CloseMenu.png'),
+    MYPHONE: require('./MyPhone.png'),
+    KORZINAP: require('./KorzinaP.png'),
+    RETURN: require('./Return.png'),
+    DELETE: require('./DeleteItem.png'),
+    FIRST: require('./First.webp'),
+    SECOND: require('./Second.webp'),
+    THREE: require('./Three.webp'),
+    FORE: require('./Fore.webp'),
+    GOLD: require('./GoldSot.webp'),
+    BUMAGA: require('./Bumaga.webp'),
+    LIMIT: require('./Limit.webp'),
+    NEWITEM: require('./NewItem.webp'),
+    ANGUS: require('./Angus.webp'),
+    VOPER: require('./Voper.webp'),
+    KOMBO: require('./Kombo.webp'),
+    KREVETKA: require('./Krevetka.webp'),
+    ITEMMINUS: require('./ItemMinus.png'),
+    ITEMPLUS: require('./ItemPlus.png'),
+
+    KORZINAWHITE: require('./KorzinaWhite.png'),
+    BURGERWHITE: require('./BurgerWhite.png'),
+    MYPHONEWHITE:require('./MyPhoneWhite.png'),
+    MENUWHITE: require('./MenuWhite.png'),
+    DAY: require('./Day.png'),
+    NIGHT: require('./Night.png'),
+    DELETEDARK: require('./DeleteDark.png'),
+    CATEGORIESWHITE: require('./CategoriesWhite.png'),
+    SHAWAWHITE: require('./ShawaWhite.png'),
+    ACTIONWHITE: require('./ActionWhite.png'),
+    KOLAWHITE: require('./KolaWhite.png'),
+    CONTACTWHITE: require('./ContactWhite.png')
+
+
+
+   
+}

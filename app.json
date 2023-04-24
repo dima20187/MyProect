@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "MyProect",
+    "name": "BURGER",
     "slug": "MyProect",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/iconPhone.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Fuut.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,12 +22,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/iconPhone.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.dima20187.MyProect"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fd4b1e53-afce-48fd-ba83-a15c49cc0089"
+      }
     }
   }
 }

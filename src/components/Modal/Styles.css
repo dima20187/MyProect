@@ -1,0 +1,12 @@
+.modal{
+    color: gold;
+    display: none;
+    background-color: black;
+}
+
+.active {
+display: block;
+width: 30%;
+height: 100%;
+
+}
