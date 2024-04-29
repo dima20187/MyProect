@@ -26,15 +26,35 @@ function Korzina ({navigation,day,kor})  {
       color: 'black',
       fontWeight: '500',
       height: '100%',
+      width: '100%',
+      backgroundColor: 'black',
     }} >
       {!count.length ? (
-        <Text/>
-        // <Text style={{color: 'gold', fontWeight: 'bold', display: 'flex',textAlign: 'left' ,height: '30%'}} onPress={Nav}><Image source={RETURN} /></Text>
-      ): (<Text style={{ color:day ? '#8b4513':'gold', fontWeight: 'bold',  textAlign: 'center', fontSize: 30,
+      <View style={{width: '100%', height:'100%' , alignContent: 'center', alignItems: 'center', backgroundColor: day? '#fdf5e6': 'black'}} >
+      <Text style={{color: 'gold',color: day? '#8b4513' : 'gold', fontWeight: 'bold', 
+        fontSize: 30, textAlign: 'center'}} >Корзина пуста</Text>
+      <View style={{
+        height: '100%',
+        width: '100%',
+        display:'flex',
+        alignContent:'center',
+        alignItems: 'center',
+        textAlign:'center',
+        color: 'gold', fontWeight: 'bold', 
+        fontSize: 30,
+        marginBottom: '20%'
+        }} >
+       <Image source={KORZINAP} />
+        </View>
+        </View>
+      ): (
+    <>
+    <View style={{height: '100%', width: '100%', marginBottom:'5%'}} >
+      <Text style={{ color:day ? '#8b4513':'gold', fontWeight: 'bold',  textAlign: 'center', fontSize: 30,
        marginBottom: '10%', borderBottomColor: day ? '#8b4513':'gold', 
-       borderBottomWidth: 1, borderRadius: 5}}>Ваши товары:</Text>)}
+       borderBottomWidth: 1, borderRadius: 5}}>Ваши товары:</Text>
       
-<View style={{flexWrap: 'wrap', flexDirection: 'row',}} >
+        <View style={{flexWrap: 'wrap', flexDirection: 'row',}} >
         {count.map(({coun,id,quantity,image,name,price}) => (
         <View style={{
         fontWeight: 'bold', 
@@ -67,37 +87,16 @@ function Korzina ({navigation,day,kor})  {
        </View>
     ))}
     </View>
-    <View  >
-    {!count.length ? (
-      <View style={{width: '100%', height:'100%' , backgroundColor: day? '#fdf5e6': 'black'}} >
-      <Text style={{color: 'gold',color: day? '#8b4513' : 'gold', fontWeight: 'bold', 
-        fontSize: 30, textAlign: 'center'}} >Корзина пуста</Text>
-      <Text  style={{
-        height: '100%',
-        width: '100%',
-        display: 'flex',
-        textAlign:'center',
-        color: 'gold', fontWeight: 'bold', 
-        fontSize: 30,
-        marginBottom: '20%'
-        }} >
-       <Image source={KORZINAP} />
-        </Text>
-        </View>
-    ) : (
-  <View>
-    <Text style={{ color: day ? '#8b4513':'gold', fontWeight: 'bold', textAlign: 'center', fontSize: 20, marginTop: '10%',}} >
-      Общая стоимость:  {sumBy(count.map(( {price,quantity})=> price * quantity))} руб.
-      </Text>
 
-    <Text style={{
-      display: 'flex',
-      alignSelf: 'center',
-      color:day ? '#8b4513': 'gold', fontWeight: 'bold', 
-      fontSize: 30,
-      }}  onPress={Nav} >Закрыть</Text>
-      </View>
-) }</View>
+    {!count.length? (null):(
+  <View>
+    <Text style={{ color: day ? '#8b4513':'gold', fontWeight: 'bold', textAlign: 'center', fontSize: 20, marginTop: '3%',}} >
+      Общая стоимость:  {sumBy(count.map(( {price,quantity})=>Math.round( price * quantity)))} руб.
+    </Text>
+  </View>)}
+  </View>
+  </>
+)}
     </ScrollView>
   )
 }

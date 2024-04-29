@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Image, View, Text, TouchableOpacity } from 'react-native'
+import { Image, View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { shavuha } from '../../Tovar/Shavuha'
 import { add } from '../../Counterslice/CounterSlice'
 
@@ -9,8 +9,11 @@ import { add } from '../../Counterslice/CounterSlice'
   const dispatch = useDispatch()
   return (
 
-
-    <View style={{flex:1, justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap', padding: '2%',bottom: '5%'}} >
+<>
+   <ScrollView style={{backgroundColor: 'black'}} >
+    <View style={{width: '100%',header: '100%'}}>
+    <Text style={{color:'gold' , textAlign: 'center', fontSize: 30, marginBottom:'3%'}}>Роллы</Text>
+    <View style={{flex:1, justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap', padding: '2%',}} >
       {shavuha.map(({ id, name, price, image,quantity}) => (
  
         <TouchableOpacity style={{backgroundColor: day? '#b0b0b0':'#2E6038', marginBottom: '3%', borderRadius: 45, width: '48%'}} key={id} onPress={
@@ -22,8 +25,10 @@ import { add } from '../../Counterslice/CounterSlice'
               </>
             </TouchableOpacity>   
        ))}
-    </View> 
-    
+    </View>
+   </View>
+  </ScrollView>
+ </>   
   )  
 
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableHighlight, Image, TouchableOpacity } from 'react-native'
-import { useDispatch } from 'react-redux'
+import { View, Text, TouchableHighlight, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 import { add } from '../../Counterslice/CounterSlice'
 import { Items }  from '../../Tovar/Items'
 
@@ -10,15 +10,18 @@ import { Items }  from '../../Tovar/Items'
  function Categories({day}) {
 
   const [modal, setModal]=useState(false)
-
-
-
+  const tele = useSelector(state=> state.telefon.telefon.autorigate)
+console.log(tele);
 const dispatch = useDispatch()
 
 
 
   return (
-    <View style={{ justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap', flex:1, padding: '2%',bottom: '5%'}} >
+<>
+  <ScrollView style={{ backgroundColor: 'black'}}>
+    <View style={{width: '100%',header: '100%'}} >
+     <Text style={{color:'gold' , textAlign: 'center', fontSize: 30, marginBottom:'3%'}} >Бургеры</Text>
+      <View style={{ justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap', flex:1,marginTop: '3%', padding: '2%',bottom: '5%'}} >
         {Items.map( ({item,name,price,image,id,  quantity}) => (
             <TouchableOpacity style={{backgroundColor: day? '#b0b0b0' :'#811D1F', borderRadius:25, marginBottom: '2%', width: '31%',}} key={id} onPress={()=>{ dispatch(add(({name,price, image,id, quantity})))
            }}>
@@ -31,7 +34,9 @@ const dispatch = useDispatch()
                </>
             </TouchableOpacity>
             ))}
+      </View>
     </View>
-  )
+  </ScrollView>
+</> )
 }
 export {Categories}

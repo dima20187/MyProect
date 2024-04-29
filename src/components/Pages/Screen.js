@@ -121,73 +121,22 @@ if(chek === 0){
 
 
 return(
-
+<>
 <ScrollView style={{ height: '100%', backgroundColor: day ? '#fdf5e6' : 'black', padding:'1%', width: '100%',}}  onPress={Modale} >
    <Header state={korzina} korzina={setKorzina} day={day} setDay={setDay} navigation={navigation}  About={setAbout} modale={setModale} 
     Burger={setBurger} Roll={setRoll} 
     Water={setWater}
     Free={setStock} />
 
-  {modale === true  ? (
-    <TouchableOpacity style={{height: '100%', width: '100%', marginBottom: '100%'}} >
 
-    <Text style={{width: '10%', height: '5%',fontSize: 30}} 
-    onPress={Modale}><Image  source={day? MENUWHITE: CLOSEMENU} />
-    </Text><Modal day={day} About={setAbout} modale={setModale} 
-    Burger={setBurger} Roll={setRoll} 
-    Water={setWater}
-    Free={setStock}
-    korzina={setKorzina}
-    /></TouchableOpacity>
-  ): (
-    <TouchableOpacity style={{width: '5%', marginTop: '1.8%'}} onPress={Modale}>
- <Image source={day? MENUWHITE:MENU}  />
- </TouchableOpacity>)}
+ <View style={{marginTop:'5%'}}>
 
- <View  style={{backgroundColor: day? '#fdf5e6':'black'}}>
-
-  
- {korzina === true ? 
- (
- 
-    <Korzina day={day}  kor={setKorzina}/>
-  ): (<Text/>)}
- </View>
-
- <View >
-    {burger === false && roll === false && water === false && about === false && stock === false && korzina === false ? (
-      <Text style={{textAlign: 'center', color: day? '#8b4513' :'gold', fontSize: 20, marginTop: '10%'}} >Выберите категорию</Text>
-    ):(
-      <Text/>
-    )}
-    {burger === true ? (
-  <Categories day={day} />
-    ):(
-      <Text/>
-    )}
-
-    {roll === true ? (
-       <Roll  day={day} />
-    ):(
-      <Text/>
-    )}
-    {water === true ? (
-      <Water day={day}/>
-    ):(<Text/>
-    )}
-{about ===true ? (
-    <AboutUs  day={day} />
-  ):(<Text/>)}
-  {stock === true ? (
-    <Stocke day={day}  />
-  ):(<Text/>)}
- 
- </View>
-  
-  <StatusBar hidden={false} />
+  <Stocke/>
+  </View>
+  <StatusBar hidden={true} />
 </ScrollView >
 
-
+</>
 )
 }
 export {Screen}

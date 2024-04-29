@@ -8,8 +8,8 @@ const {FIRST, SECOND, THREE, FORE, BUMAGA, GOLD, NEWITEM, LIMIT, ANGUS, VOPER, K
 const Stocke = ({day}) => {
 
   return (
-    <View style={{padding:'1%',bottom: '5%'}} >
-      <Text style={{color: day? '#8b4513':'gold', textAlign: 'center', fontSize: 30, bottom: 50}} >Наши акции и новинки!</Text>
+    <View style={{padding:'1%',bottom: '1%'}} >
+      <Text style={{color: day? '#8b4513':'gold', textAlign: 'center', fontSize: 30, bottom: 15}} >Наши акции и новинки!</Text>
         <View style={{flex: 1 , flexWrap: 'nowrap',flexDirection: 'row', marginBottom: '2%', borderBottomColor:day? '#8b4513': 'red', borderBottomWidth: 1, borderRadius: 10}} >
         <TouchableOpacity style={{flexDirection: 'row',width: '50%',marginRight: '1%', }} onPress={()=>Linking.openURL('https://burger-king.by/menu/vsye_po_2_3_4_rub/')} >
           <Image style={{width: '100%', height: 60, padding: '40%',borderRadius: 20}} source={FIRST} />
@@ -59,7 +59,7 @@ const Stocke = ({day}) => {
 
         </TouchableOpacity>
       </View>
-      <View style={{flex: 1 , flexWrap: 'nowrap',flexDirection: 'row',marginBottom: '2%', borderBottomColor: day? '#8b4513':'red', borderBottomWidth: 1, borderRadius: 10  }} >
+      <View style={{flex: 1 , flexWrap: 'nowrap',flexDirection: 'row', }} >
           <TouchableOpacity style={{flexDirection: 'row',width: '50%',marginRight: '1%' }} onPress={()=>Linking.openURL('https://burger-king.by/menu/king_kombo/')}>
           <Image style={{width: '100%', height: 60, padding: '40%',borderRadius: 20}} source={KOMBO}  />
         </TouchableOpacity>

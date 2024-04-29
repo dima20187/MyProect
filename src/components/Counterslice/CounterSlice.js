@@ -5,7 +5,12 @@ import { createSlice } from "@reduxjs/toolkit";
     name: 'count',
     initialState: {
         count: [],
-        telefon: []
+        telefon: [{
+            id: '',
+            phone: '',
+            autorigate: false,
+       }],
+        autorigate: false
     },
     
     reducers:{
@@ -15,17 +20,13 @@ import { createSlice } from "@reduxjs/toolkit";
             if(found){
                 state.count.forEach((post)=>post.name===payload.name ?post.quantity=post.quantity + 1:post.quantity)
            return
-        }else {
-                
+        }else {   
             state.count.push({
-
                 id: new Date().toISOString(),
                 image: payload.image,
                 name:payload.name,
                 price: payload.price,
-                quantity: payload.quantity
-                
-                
+                quantity: payload.quantity   
             } )
     
             console.log(state.count)
@@ -46,44 +47,31 @@ import { createSlice } from "@reduxjs/toolkit";
                 state.count.forEach((post)=>post.name===payload.name ?post.quantity=post.quantity + 1:post.quantity)
                 
            return
-        }
-
-
-    },minusItem: (state, {payload})=>{
+        }},
+    minusItem: (state, {payload})=>{
         let newCart = [...state.count]
         const found = newCart.find(({name})=> name === payload.name)
         if(found){
             state.count.forEach((post)=>post.name===payload.name ?post.quantity=post.quantity - 1:post.quantity )
-            state.count.forEach((post)=>post.quantity ===0  ?post.quantity= 1:post.quantity )
-            
+            state.count.forEach((post)=>post.quantity ===0  ?post.quantity= 1:post.quantity )    
        return
-    }
-
-
-},
-
-
-        
-
+    }},
         addTelefon: (state,{payload})=>{
             state.telefon.push({
                 id: new Date().toISOString(),
-                phone: payload
-                
+                phone: payload,
+                autorigate: true
             })
-            
-            console.log(state.telefon)
-        }
            
-
+            console.log(state)
+        },
+        logOut: ()=>{
+            return initialState
+        }
     }
-
-    
-    
-
    })
 
-   export const {add, remove,addTelefon,plusItem,minusItem} = counterSlice.actions
+   export const {add, remove,addTelefon,plusItem,minusItem, logOut} = counterSlice.actions
 
    export default counterSlice.reducer
  
