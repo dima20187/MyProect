@@ -10,18 +10,16 @@ const {BURGER} = IMAGE
 
 function Authorigate  ({navigation})  {
   const dispatch = useDispatch()
-  const tele = useSelector(state=> state.telefon.telefon)
+  const tele = useSelector(state => state.telefon.telefon.autorigate)
   console.log(tele);
     const [phone,setPhone]=useState('')
    
- 
-
     if (phone.length === 13 && Number(phone)){
         dispatch(addTelefon(phone))
         setPhone('+375')
         setTimeout(()=>{
         navigation.navigate('Screen')
-        },1000)
+        },50000)
        
         
     }

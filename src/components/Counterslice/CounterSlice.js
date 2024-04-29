@@ -10,7 +10,7 @@ import { createSlice } from "@reduxjs/toolkit";
             phone: '',
             autorigate: false,
        }],
-        autorigate: false
+        autorigate: false,
     },
     
     reducers:{
@@ -48,26 +48,34 @@ import { createSlice } from "@reduxjs/toolkit";
                 
            return
         }},
-    minusItem: (state, {payload})=>{
-        let newCart = [...state.count]
-        const found = newCart.find(({name})=> name === payload.name)
-        if(found){
-            state.count.forEach((post)=>post.name===payload.name ?post.quantity=post.quantity - 1:post.quantity )
-            state.count.forEach((post)=>post.quantity ===0  ?post.quantity= 1:post.quantity )    
-       return
-    }},
+        minusItem: (state, {payload})=>{
+            let newCart = [...state.count]
+            const found = newCart.find(({name})=> name === payload.name)
+            if(found){
+                state.count.forEach((post)=>post.name===payload.name ?post.quantity=post.quantity - 1:post.quantity )
+                state.count.forEach((post)=>post.quantity ===0  ?post.quantity= 1:post.quantity )    
+        return
+        }},
         addTelefon: (state,{payload})=>{
-            state.telefon.push({
-                id: new Date().toISOString(),
-                phone: payload,
-                autorigate: true
-            })
-           
-            console.log(state)
+            const find = state.telefon.find(({payload})=> payload === payload)
+            if(find){
+                state.autorigate = true
+                console.log(state.autorigate);
+            }else{
+             state.telefon.push({
+                 id: new Date().toISOString(),
+                 phone: payload,
+             }),
+             state.autorigate = true,
+             console.log(state.autorigate)
+            };
         },
-        logOut: ()=>{
-            return initialState
-        }
+        logOut: (state)=>{
+            state.count = [],
+            state.telefon = [],
+            state.autorigate = false;
+            console.log(state.autorigate);
+        },
     }
    })
 

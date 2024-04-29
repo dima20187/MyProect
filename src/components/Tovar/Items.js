@@ -1,6 +1,5 @@
 export const Items  = [
     {
- 
     name: 'Ангус Шеф',
     image: 'https://burger-king.by/upload/resize_cache/webp/iblock/385/9ifksoc9setbpm1msqydwp33r4ar3rsz.webp',
     price: 15.60,

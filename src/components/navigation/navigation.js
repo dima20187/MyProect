@@ -23,12 +23,11 @@ const  {BURGER} = ICONBAR
 
 function Navigation({navigation}) {
 
-  const tele = useSelector(state=> state.telefon.telefon.autorigate)
+  const tele = useSelector(state=> state.telefon.autorigate)
 console.log(tele);
   return (
 
     <NavigationContainer >
-
       {!tele ?  (
       <Stack.Navigator>
       <Tab.Screen name='Lounch' component={Lounch} options={{headerShown: false,}} />
