@@ -20,9 +20,9 @@ function Authorigate  ({navigation})  {
         setTimeout(()=>{
         navigation.navigate('Screen')
         },50000)
-       
         
     }
+
     if(phone.length <4){
       setPhone('+375')
     }if(!Number(phone)){

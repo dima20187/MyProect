@@ -55,7 +55,7 @@ function Korzina ({navigation,day,kor})  {
        borderBottomWidth: 1, borderRadius: 5}}>Ваши товары:</Text>
       
         <View style={{flexWrap: 'wrap', flexDirection: 'row',}} >
-        {count.map(({coun,id,quantity,image,name,price}) => (
+        {count.map(({coun,id,quantity,image,name,price},index) => (
         <View style={{
         fontWeight: 'bold', 
         margin: '2%', 
@@ -63,18 +63,19 @@ function Korzina ({navigation,day,kor})  {
         backgroundColor: day? '#b0b0b0':'#60482E',
         borderRadius: 45,
         
-        }}  key={id}>
+        }}  key={index}>
           <>
-          <Text style={{width: '100%',height: 40, textAlign: 'right'}} onPress={()=>dispatch(remove(id))} ><Image source={day? DELETEDARK :DELETE}/></Text>
-        <Image style={{width: '100%' ,
+        <Text style={{width: '100%',height: 40, textAlign: 'right'}} onPress={()=>dispatch(remove(id))} ><Image source={day? DELETEDARK :DELETE}/></Text>
+          <Image style={{width: '100%' ,
+          height: 'auto',
           padding: '45%', 
-        justifyContent: 'center' }}  
-          source={{uri: image}} 
+          justifyContent: 'center' }}  
+          source={image} 
           />
-         <Text style={{ color:day ? '#8b4513': 'gold', fontWeight: 'bold',  textAlign: 'center',fontSize: 18}} >
+         <Text style={{ color:day ? '#8b4513': 'gold', fontWeight: 'bold',  textAlign: 'center',fontSize: 18,height: 40}} >
           {name} 
          </Text>
-         <Text style={{ color: day ? '#8b4513':'gold', fontWeight: 'bold', textAlign: 'center', fontSize: 16, marginBottom: '5%', alignItems: 'flex-start'}} >
+         <Text style={{color: day ? '#8b4513':'gold', fontWeight: 'bold', textAlign: 'center', fontSize: 16, marginBottom: '5%', alignItems: 'flex-start'}} >
           Цена: {price} руб
           </Text> 
           <Text  style={{ color:day ? '#8b4513': 'gold', fontWeight: 'bold', textAlign: 'center', fontSize: 26}} > 

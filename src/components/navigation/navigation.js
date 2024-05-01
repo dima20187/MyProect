@@ -13,25 +13,23 @@ import { Categories } from '../Pages/RollandBurgers/Categories';
 import { Roll } from '../Pages/RollandBurgers/Roll';
 import { Water } from '../Pages/RollandBurgers/Water';
 import { Header } from '../Pages/Header';
-import { ICONBAR } from '../../../assets/iconBar';
 import { Image } from 'react-native';
 
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
-const  {BURGER} = ICONBAR
 
 function Navigation({navigation}) {
 
   const tele = useSelector(state=> state.telefon.autorigate)
-console.log(tele);
+  console.log(tele);
   return (
 
     <NavigationContainer >
       {!tele ?  (
       <Stack.Navigator>
       <Tab.Screen name='Lounch' component={Lounch} options={{headerShown: false,}} />
-      <Stack.Screen name='Authorigate' component={Authorigate} options={{headerShown: false}} />
+      <Stack.Screen name='Authorigate' component={Authorigate} options={{headerShown: false,}} />
       </Stack.Navigator>) 
       :(
       <Tab.Navigator
