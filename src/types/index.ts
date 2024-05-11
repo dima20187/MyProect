@@ -1,0 +1,1 @@
+export type { FCC, Nullable, Nullish } from './global';

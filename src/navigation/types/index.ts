@@ -1,0 +1,1 @@
+import { RootStackParams, ScreenProps } from "./@types";
