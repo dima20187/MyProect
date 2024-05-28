@@ -1,14 +1,16 @@
 import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
-import { store } from './src/components/Pages/store/store';
-import { Navigation } from './src/components/navigation/navigation';
-
+import store, { persistor } from './src/store/store';
+import { Navigation } from './src/navigation/NavigationComponent';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
 export default function App() {
   return(  
 <Provider store={store} >
- <Navigation /> 
+  <PersistGate loading={null} persistor={persistor}>
+ <Navigation />
+ </PersistGate> 
 <StatusBar 
 animated={true}
 hidden={true} 

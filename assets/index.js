@@ -27,7 +27,7 @@ export const IMAGE = {
     KREVETKA: require('./Krevetka.webp'),
     ITEMMINUS: require('./ItemMinus.png'),
     ITEMPLUS: require('./ItemPlus.png'),
-
+    DELETEUSER: require('./DeleteUser.png'),
     KORZINAWHITE: require('./KorzinaWhite.png'),
     BURGERWHITE: require('./BurgerWhite.png'),
     MYPHONEWHITE:require('./MyPhoneWhite.png'),
